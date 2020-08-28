@@ -1,0 +1,369 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---------------------------------------------------- */
+
+.LeftSideNav {
+  display: block;
+  font-size: medium;
+  text-decoration: none;
+  background-color: #070063;
+  width: 90px;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  .img {
+    height: 4%;
+    width: 60%;
+    margin: auto 0 250% 0;
+  }
+  div {
+    margin-bottom: 5px;
+  }
+  img:not(first-child) {
+    height: 3%;
+    width: 60%;
+    padding: 20% 20% 10% 20%;
+  }
+  p {
+    text-align: center;
+    color: white;
+  }
+}
+
+@media (max-width: 1100px) {
+  .LeftSideNav {
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    .img {
+      height: 25px;
+      width: 35px;
+      margin: 1.5vh 0 0 1.5%;
+      padding: 0;
+      float: left;
+    }
+    div {
+      display: inline-block;
+      text-align: center;
+      margin: 0px 15px 0px 15px;
+      padding: 5px 0;
+      img:not(first-child) {
+        height: 20px;
+        width: 35px;
+        padding: 6px 0px 2px 0px;
+      }
+    }
+  }
+}
+
+.Left {
+  margin: 0;
+  width: 53%;
+  display: inline-block;
+  text-align: left;
+  height: 100vh;
+  background-color: rgba(0, 0, 124, 0.568);
+  // background-image: url("../assets/images/background.jpg");
+  div {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+
+    p:nth-child(1) {
+      font-size: 4vw;
+      padding: 11% 0 0 0;
+    }
+    p:nth-child(2) {
+      font-size: 8vw;
+      padding: 7% 0 0 0;
+    }
+    p:nth-child(3) {
+      font-size: 1.5vw;
+      padding: 13% 0 0 0;
+    }
+    p:nth-child(5) {
+      position: absolute;
+      font-size: 15vh;
+      transform: rotate(-50deg);
+      opacity: 0.1;
+      letter-spacing: 10vh;
+      top: 40%;
+      right: 10%;
+    }
+    p:nth-child(4) {
+      font-size: 1.5vw;
+    }
+    p {
+      margin-left: 17%;
+      color: white;
+    }
+    button {
+      margin: 5% 0 0 0;
+      margin-left: 17%;
+      font-size: 1.2vw;
+      background-color: transparent;
+      border-radius: 28px;
+      border: 2px solid #ffffff;
+      cursor: pointer;
+      color: #ffffff;
+      padding: 1vh 1.6vw;
+      text-shadow: 0px 1px 0px #220038;
+    }
+    Button:hover {
+      background-color: #a616ff;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .Left {
+    div {
+      p:nth-child(1) {
+        font-size: 5vw;
+      }
+      p:nth-child(2) {
+        font-size: 9vw;
+      }
+      p:nth-child(3) {
+        font-size: 2vw;
+      }
+      p:nth-child(5) {
+        font-size: 16vh;
+      }
+      p:nth-child(4) {
+        font-size: 2vw;
+      }
+      p {
+        margin-left: 13%;
+      }
+      button {
+        margin-left: 13%;
+      }
+    }
+  }
+}
+
+.Right {
+  float: right;
+  width: 47%;
+  height: 100vh;
+  text-align: center;
+  .Rightdiv {
+    position: absolute;
+    top: 45%;
+    // left: 20%;
+    transform: translate(0%, -50%);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 100vh;
+    // border: 3px solid green;
+    p:nth-child(1) {
+      padding: 13% 0 5% 0;
+      font-size: 4vw;
+    }
+    .VardasImone {
+      width: 32%;
+      margin: 5px;
+      padding: 2%;
+      font-size: 1.2vw;
+    }
+    .pildymoLaukai {
+      width: 70%;
+      margin: 6px;
+      padding: 2%;
+      font-size: 1.2vw;
+    }
+    .nuoma {
+      width: 70%;
+      margin: 6px;
+      padding: 2%;
+      box-sizing: content-box;
+      font-size: 1.2vw;
+    }
+    .rezervacija {
+      text-align: center;
+      font-size: 1.5vw;
+      margin: 30px auto 10%;
+      padding: 1% 3%;
+      display: block;
+
+      background: linear-gradient(to bottom, #c972ff 5%, #310052 100%);
+      background-color: #c972ff;
+      border: 2px solid #ffffff;
+      cursor: pointer;
+      color: #ffffff;
+      padding: 12px 31px;
+      text-shadow: 0px 1px 0px #220038;
+    }
+    .rezervacija:hover {
+      background: linear-gradient(to bottom, #310052 5%, #c972ff 100%);
+      background-color: #c972ff;
+    }
+
+    div {
+      display: inline-block;
+      width: 20%;
+      div {
+        width: 78%;
+        padding-left: 2%;
+        p:nth-child(1) {
+          font-size: 1.5vw;
+          margin-bottom: 5px;
+          float: left;
+          padding: 0;
+        }
+        p:nth-child(2) {
+          font-size: 1vw;
+          color: rgba(148, 148, 148, 0.616);
+          float: left;
+        }
+      }
+      img:nth-of-type(1) {
+        height: 10%;
+        width: 20%;
+        float: left;
+      }
+    }
+    p:nth-child(9) {
+      width: 25%;
+      font-size: 2vw;
+      text-align: left;
+      display: inline-block;
+    }
+  }
+}
+
+// .LeftandRight {
+//   display: flex;
+// }
