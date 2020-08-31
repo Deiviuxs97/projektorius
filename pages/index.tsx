@@ -1,9 +1,8 @@
 import Description from "./description/indexDescription";
-import Price from "./price/index";
-import Faq from "./FAQ/index";
+import Price from "./price/indexPrice";
+import Faq from "./FAQ/indexFaq";
 import classes from "./style.module.scss";
-// import Background from "../assets/images/background.jpg";
-// import backgroundDu from "../public/photo.jpg";
+// import Background from "../public/bg.jpg";
 
 export default function Home() {
   return (
@@ -28,13 +27,20 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className={classes.Left}>
+      <div
+        className={classes.Left}
+        style={{
+          backgroundImage: "url(" + "/bg.jpg" + ")",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div>
           <p>Projektoriaus nuoma</p>
           <p>Projektorius Epson</p>
           <p>Optinis Prietaisas, Skirtas Projektuoti Atvaizdui ant</p>
           <p>Nutolusio Paviršiaus</p>
-          <p>Photo</p>
           <button>Aprašymas</button>
         </div>
       </div>

@@ -163,6 +163,28 @@ table {
   }
 }
 
+.Collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.CollapsibleText {
+  background-color: #eee;
+  color: #444;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
 @media (max-width: 1100px) {
   .sectionFaq {
     margin-left: 0;

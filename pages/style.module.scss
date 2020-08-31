@@ -190,8 +190,6 @@ table {
   display: inline-block;
   text-align: left;
   height: 100vh;
-  background-color: rgba(0, 0, 124, 0.568);
-  // background-image: url("../assets/images/background.jpg");
   div {
     margin: 0;
     position: absolute;
@@ -210,15 +208,6 @@ table {
     p:nth-child(3) {
       font-size: 1.5vw;
       padding: 13% 0 0 0;
-    }
-    p:nth-child(5) {
-      position: absolute;
-      font-size: 15vh;
-      transform: rotate(-50deg);
-      opacity: 0.1;
-      letter-spacing: 10vh;
-      top: 40%;
-      right: 10%;
     }
     p:nth-child(4) {
       font-size: 1.5vw;
@@ -240,7 +229,7 @@ table {
       text-shadow: 0px 1px 0px #220038;
     }
     Button:hover {
-      background-color: #a616ff;
+      background-color: #8e3dc0;
     }
   }
 }
@@ -278,6 +267,7 @@ table {
   width: 47%;
   height: 100vh;
   text-align: center;
+  background-color: rgb(247, 247, 247);
   .Rightdiv {
     position: absolute;
     top: 45%;
