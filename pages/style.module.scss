@@ -130,6 +130,10 @@ table {
 
 /* ---------------------------------------------------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .LeftSideNav {
   display: block;
   font-size: medium;
@@ -142,7 +146,7 @@ table {
   .img {
     height: 4%;
     width: 60%;
-    margin: auto 0 250% 0;
+    margin: 0 auto 250%;
   }
   div {
     margin-bottom: 5px;
@@ -150,11 +154,13 @@ table {
   img:not(first-child) {
     height: 3%;
     width: 60%;
-    padding: 20% 20% 10% 20%;
+    margin: 20% 20% 10% 20%;
+    cursor: pointer;
   }
   p {
     text-align: center;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -215,6 +221,7 @@ table {
     p {
       margin-left: 17%;
       color: white;
+      text-shadow: 1px 2px 0px #220038;
     }
     button {
       margin: 5% 0 0 0;
@@ -353,7 +360,3 @@ table {
     }
   }
 }
-
-// .LeftandRight {
-//   display: flex;
-// }

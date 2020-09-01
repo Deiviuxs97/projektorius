@@ -1,8 +1,8 @@
 import classes from "./styleDescription.module.scss";
 
-export default function Description() {
+export default function Description(props) {
   return (
-    <section className={classes.sectionDescription}>
+    <section className={classes.sectionDescription} ref={props.refProp}>
       <div className={classes.FirstDiv}>
         <div>
           <p className={classes.bigText}>APIE PROJEKTORIŲ</p>

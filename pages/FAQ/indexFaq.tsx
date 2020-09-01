@@ -2,9 +2,9 @@ import classes from "./faqStyle.module.scss";
 import React, { constructor } from "react";
 import Collapsible from "react-collapsible";
 
-export default function Faq() {
+export default function Faq(props) {
   return (
-    <section className={classes.sectionFaq}>
+    <section className={classes.sectionFaq} ref={props.refProp}>
       <div className={classes.PirmasDivv}>
         <p className={classes.duk}>DUK</p>
         <div className={classes.divv}>

@@ -1,8 +1,8 @@
 import classes from "./priceStyle.module.scss";
 
-export default function Price() {
+export default function Price(props) {
   return (
-    <section className={classes.sectionPrice}>
+    <section className={classes.sectionPrice} ref={props.refProp}>
       <div className={classes.PirmasDiv}>
         <p className={classes.kaina}>Kaina</p>
         <div className={classes.div}>

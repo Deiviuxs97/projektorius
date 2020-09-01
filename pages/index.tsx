@@ -1,33 +1,44 @@
+import React, { useRef } from "react";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
 import classes from "./style.module.scss";
-// import Background from "../public/bg.jpg";
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 export default function Home() {
+  const myPro = useRef(null);
+  const myDes = useRef(null);
+  const myPri = useRef(null);
+  const myFaq = useRef(null);
+  const executeScrollPro = () => scrollToRef(myPro);
+  const executeScrollDes = () => scrollToRef(myDes);
+  const executeScrollPri = () => scrollToRef(myPri);
+  const executeScrollFaq = () => scrollToRef(myFaq);
   return (
     <section>
       <nav className={classes.LeftSideNav}>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
-        <div>
+        <div onClick={executeScrollPro}>
           <img src="/SideNavImageFull.png" alt="SideNavImages" />
           <p>Projektorius</p>
         </div>
-        <div>
+        <div onClick={executeScrollDes}>
           <img src="/SideNavImages.png" alt="SideNavImages" />
-          <p>Kainos</p>
+          <p>Aprašymas</p>
         </div>
-        <div>
+        <div onClick={executeScrollPri}>
+          <img src="/SideNavImages.png" alt="SideNavImages" />
+          <p>Kaina</p>
+        </div>
+        <div onClick={executeScrollFaq}>
           <img src="/SideNavImages.png" alt="SideNavImages" />
           <p>DUK</p>
-        </div>
-        <div>
-          <img src="/SideNavImages.png" alt="SideNavImages" />
-          <p>Rezervacija</p>
         </div>
       </nav>
 
       <div
+        ref={myPro}
         className={classes.Left}
         style={{
           backgroundImage: "url(" + "/bg.jpg" + ")",
@@ -41,7 +52,7 @@ export default function Home() {
           <p>Projektorius Epson</p>
           <p>Optinis Prietaisas, Skirtas Projektuoti Atvaizdui ant</p>
           <p>Nutolusio Paviršiaus</p>
-          <button>Aprašymas</button>
+          <button onClick={executeScrollDes}>Aprašymas</button>
         </div>
       </div>
 
@@ -50,14 +61,14 @@ export default function Home() {
           <p>Rezervuokite</p>
           <input
             type="text"
-            value="Vardas, Pavardė"
+            // value="Vardas, Pavardė"
             className={classes.VardasImone}
           />
           <input
             type="text"
             value="Įmonė (jeigu užsako įmonė)"
             className={classes.VardasImone}
-          />
+          ></input>
           <input
             type="text"
             value="Elektroninis paštas"
@@ -104,9 +115,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Description />
-      <Price />
-      <Faq />
+      <Description refProp={myDes}></Description>
+      <Price refProp={myPri}></Price>
+      <Faq refProp={myFaq}></Faq>
     </section>
   );
 }
