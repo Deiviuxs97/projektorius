@@ -130,9 +130,11 @@ table {
 
 /* ---------------------------------------------------- */
 
+$background-color: rgb(247, 247, 247);
+
 .sectionPrice {
   height: 100vh;
-  background-color: rgb(233, 233, 233);
+  background-color: $background-color;
   .PirmasDiv {
     position: absolute;
     width: 100%;

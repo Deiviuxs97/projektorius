@@ -130,8 +130,11 @@ table {
 
 /* ---------------------------------------------------- */
 
+$background-color: rgb(247, 247, 247);
+
 html {
   scroll-behavior: smooth;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .LeftSideNav {
@@ -144,9 +147,10 @@ html {
   position: fixed;
   z-index: 1;
   .img {
+    display: block;
     height: 4%;
     width: 60%;
-    margin: 0 auto 250%;
+    margin: 20% auto 250%;
   }
   div {
     margin-bottom: 5px;
@@ -155,6 +159,7 @@ html {
     height: 3%;
     width: 60%;
     margin: 20% 20% 10% 20%;
+    display: inline;
     cursor: pointer;
   }
   p {
@@ -200,20 +205,20 @@ html {
     margin: 0;
     position: absolute;
     top: 45%;
-    left: 30%;
+    left: 27%;
     transform: translate(-50%, -50%);
 
     p:nth-child(1) {
-      font-size: 4vw;
-      padding: 11% 0 0 0;
+      font-size: 54px;
+      padding-top: 4%;
     }
     p:nth-child(2) {
-      font-size: 8vw;
-      padding: 7% 0 0 0;
+      font-size: 94px;
+      padding-top: 7%;
     }
     p:nth-child(3) {
-      font-size: 1.5vw;
-      padding: 13% 0 0 0;
+      font-size: 28px;
+      padding-top: 10%;
     }
     p:nth-child(4) {
       font-size: 1.5vw;
@@ -234,6 +239,7 @@ html {
       color: #ffffff;
       padding: 1vh 1.6vw;
       text-shadow: 0px 1px 0px #220038;
+      outline: none;
     }
     Button:hover {
       background-color: #8e3dc0;
@@ -273,8 +279,7 @@ html {
   float: right;
   width: 47%;
   height: 100vh;
-  text-align: center;
-  background-color: rgb(247, 247, 247);
+  background-color: $background-color;
   .Rightdiv {
     position: absolute;
     top: 45%;
@@ -285,36 +290,64 @@ html {
     // align-items: center;
     // height: 100vh;
     // border: 3px solid green;
-    p:nth-child(1) {
+    .Rezervuokite {
       padding: 13% 0 5% 0;
-      font-size: 4vw;
-    }
-    .VardasImone {
-      width: 32%;
-      margin: 5px;
-      padding: 2%;
-      font-size: 1.2vw;
-    }
-    .pildymoLaukai {
-      width: 70%;
-      margin: 6px;
-      padding: 2%;
-      font-size: 1.2vw;
-    }
-    .nuoma {
-      width: 70%;
-      margin: 6px;
-      padding: 2%;
-      box-sizing: content-box;
-      font-size: 1.2vw;
-    }
-    .rezervacija {
       text-align: center;
-      font-size: 1.5vw;
-      margin: 30px auto 10%;
+      font-size: 54px;
+    }
+    .inputs {
+      text-align: center;
+      flex-wrap: wrap;
+      select:first-child {
+        color: #ccc;
+      }
+      option:first-child {
+        color: #ccc;
+      }
+      div {
+        width: 70%;
+        margin: 0 auto;
+        .VardasPavarde {
+          width: 49%;
+          box-sizing: border-box;
+          margin: 0 1% 5px 0;
+          padding: 15px 18px;
+          font-size: 16px;
+          outline: none;
+        }
+        .Imone {
+          width: 49%;
+          box-sizing: border-box;
+          margin: 0 0 5px 1%;
+          padding: 15px 18px;
+          font-size: 16px;
+          outline: none;
+        }
+      }
+      .pildymoLaukai {
+        width: 70%;
+        margin: 5px;
+        box-sizing: border-box;
+        padding: 15px 18px;
+        font-size: 16px;
+        outline: none;
+      }
+      .nuoma {
+        width: 70%;
+        margin: 5px;
+        padding: 15px 18px;
+        // box-sizing: content-box;
+        font-size: 16px;
+        outline: none;
+      }
+    }
+    .RezervuotiButton {
+      text-align: center;
+      font-size: 24px;
+      margin: 20px auto 6%;
       padding: 1% 3%;
       display: block;
-
+      outline: none;
       background: linear-gradient(to bottom, #c972ff 5%, #310052 100%);
       background-color: #c972ff;
       border: 2px solid #ffffff;
@@ -323,33 +356,45 @@ html {
       padding: 12px 31px;
       text-shadow: 0px 1px 0px #220038;
     }
-    .rezervacija:hover {
+    .RezervuotiButton:hover {
       background: linear-gradient(to bottom, #310052 5%, #c972ff 100%);
-      background-color: #c972ff;
     }
-
-    div {
-      display: inline-block;
-      width: 20%;
-      div {
-        width: 78%;
-        padding-left: 2%;
-        p:nth-child(1) {
-          font-size: 1.5vw;
-          margin-bottom: 5px;
-          float: left;
-          padding: 0;
-        }
-        p:nth-child(2) {
-          font-size: 1vw;
-          color: rgba(148, 148, 148, 0.616);
-          float: left;
-        }
-      }
-      img:nth-of-type(1) {
-        height: 10%;
-        width: 20%;
+    .kontaktai {
+      width: 85%;
+      height: 80px;
+      margin: 0 auto;
+      .musuKontaktai {
+        // padding: 0 0 3% 0;
+        font-size: 24px;
+        // text-align: left;
+        display: inline-block;
+        width: 21%;
         float: left;
+      }
+      div {
+        display: inline-block;
+        width: 26%;
+        float: left;
+        div {
+          width: 78%;
+          padding-left: 2%;
+          p:nth-child(1) {
+            // font-size: 1.5vw;
+            margin-bottom: 5px;
+            float: left;
+            padding: 0;
+          }
+          p:nth-child(2) {
+            // font-size: 1vw;
+            color: rgba(148, 148, 148, 0.616);
+            float: left;
+          }
+        }
+        img:nth-of-type(1) {
+          height: 10%;
+          width: 20%;
+          float: left;
+        }
       }
     }
     p:nth-child(9) {

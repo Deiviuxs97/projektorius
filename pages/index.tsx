@@ -18,22 +18,39 @@ export default function Home() {
   return (
     <section>
       <nav className={classes.LeftSideNav}>
+        <div></div>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
-        <div onClick={executeScrollPro}>
-          <img src="/SideNavImageFull.png" alt="SideNavImages" />
-          <p>Projektorius</p>
+        <div>
+          <img
+            src="/SideNavImageFull.png"
+            alt="SideNavImages"
+            onClick={executeScrollPro}
+          />
+          <p onClick={executeScrollPro}>Projektorius</p>
         </div>
-        <div onClick={executeScrollDes}>
-          <img src="/SideNavImages.png" alt="SideNavImages" />
-          <p>Aprašymas</p>
+        <div>
+          <img
+            src="/SideNavImages.png"
+            alt="SideNavImages"
+            onClick={executeScrollDes}
+          />
+          <p onClick={executeScrollDes}>Aprašymas</p>
         </div>
-        <div onClick={executeScrollPri}>
-          <img src="/SideNavImages.png" alt="SideNavImages" />
-          <p>Kaina</p>
+        <div>
+          <img
+            src="/SideNavImages.png"
+            alt="SideNavImages"
+            onClick={executeScrollPri}
+          />
+          <p onClick={executeScrollPri}>Kaina</p>
         </div>
-        <div onClick={executeScrollFaq}>
-          <img src="/SideNavImages.png" alt="SideNavImages" />
-          <p>DUK</p>
+        <div>
+          <img
+            src="/SideNavImages.png"
+            alt="SideNavImages"
+            onClick={executeScrollFaq}
+          />
+          <p onClick={executeScrollFaq}>DUK</p>
         </div>
       </nav>
 
@@ -50,67 +67,77 @@ export default function Home() {
         <div>
           <p>Projektoriaus nuoma</p>
           <p>Projektorius Epson</p>
-          <p>Optinis Prietaisas, Skirtas Projektuoti Atvaizdui ant</p>
-          <p>Nutolusio Paviršiaus</p>
+          <p>
+            Optinis Prietaisas, Skirtas Projektuoti Atvaizdui ant Nutolusio
+            Paviršiaus
+          </p>
           <button onClick={executeScrollDes}>Aprašymas</button>
         </div>
       </div>
 
       <div className={classes.Right}>
         <div className={classes.Rightdiv}>
-          <p>Rezervuokite</p>
-          <input
-            type="text"
-            // value="Vardas, Pavardė"
-            className={classes.VardasImone}
-          />
-          <input
-            type="text"
-            value="Įmonė (jeigu užsako įmonė)"
-            className={classes.VardasImone}
-          ></input>
-          <input
-            type="text"
-            value="Elektroninis paštas"
-            className={classes.pildymoLaukai}
-          />
-          <input
-            type="text"
-            value="Telefonas"
-            className={classes.pildymoLaukai}
-          />
-          <input
-            type="text"
-            value="Norima data nuomai"
-            className={classes.pildymoLaukai}
-          />
-          <select name="Nuomos periodas" className={classes.nuoma}>
-            <option value="">Nuomos periodas</option>
-            <option value="1para">1 para</option>
-            <option value="2paros">2 paros</option>
-            <option value="more">Daugiau nei 2 poros</option>
-          </select>
-          <button className={classes.rezervacija}>Rezervuoti</button>
-          <p>Mūsų kontaktai:</p>
-          <div>
-            <img src="/PlaceLogo.png" alt="place" />
+          <p className={classes.Rezervuokite}>Rezervuokite</p>
+          <form className={classes.inputs}>
             <div>
-              <p>Adresas:</p>
-              <p>gatve gatve gatve</p>
+              <input
+                type="text"
+                placeholder="Vardas, Pavardė"
+                className={classes.VardasPavarde}
+              />
+              <input
+                type="text"
+                placeholder="Įmonė (jeigu užsako įmonė)"
+                className={classes.Imone}
+              ></input>
             </div>
-          </div>
-          <div>
-            <img src="/ElLogo.png" alt="el" />
+            <input
+              type="text"
+              placeholder="Elektroninis paštas"
+              className={classes.pildymoLaukai}
+            />
+            <input
+              type="text"
+              placeholder="Telefonas"
+              className={classes.pildymoLaukai}
+            />
+            <input
+              type="text"
+              placeholder="Norima data nuomai"
+              className={classes.pildymoLaukai}
+            />
+            <select name="Nuomos periodas" className={classes.nuoma}>
+              <option selected disabled value="">
+                Nuomos periodas
+              </option>
+              <option value="1para">1 para</option>
+              <option value="2paros">2 paros</option>
+              <option value="more">Daugiau nei 2 poros</option>
+            </select>
+          </form>
+          <button className={classes.RezervuotiButton}>Rezervuoti</button>
+          <div className={classes.kontaktai}>
+            <p className={classes.musuKontaktai}>Mūsų kontaktai:</p>
             <div>
-              <p>El. paštas:</p>
-              <p>test@test.com</p>
+              <img src="/location.png" alt="location" />
+              <div>
+                <p>Adresas:</p>
+                <p>gatve gatve gatve</p>
+              </div>
             </div>
-          </div>
-          <div>
-            <img src="/TelLogo.png" alt="tel" />
             <div>
-              <p>Telefonas:</p>
-              <p>+370 600 00</p>
+              <img src="/letter.png" alt="email" />
+              <div>
+                <p>El. paštas:</p>
+                <p>test@test.com</p>
+              </div>
+            </div>
+            <div>
+              <img src="/phone.png" alt="phone" />
+              <div>
+                <p>Telefonas:</p>
+                <p>+370 600 00</p>
+              </div>
             </div>
           </div>
         </div>
