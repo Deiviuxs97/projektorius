@@ -159,7 +159,6 @@ html {
     height: 3%;
     width: 60%;
     margin: 20% 20% 10% 20%;
-    display: inline;
     cursor: pointer;
   }
   p {
@@ -177,19 +176,22 @@ html {
     .img {
       height: 25px;
       width: 35px;
-      margin: 1.5vh 0 0 1.5%;
+      margin: 18px 0 0 1.5%;
       padding: 0;
       float: left;
     }
     div {
+      height: 20px;
+      width: 75px;
       display: inline-block;
       text-align: center;
-      margin: 0px 15px 0px 15px;
-      padding: 5px 0;
+      margin: 10px 15px 30px 15px;
+      // padding: 50px 0;
       img:not(first-child) {
         height: 20px;
-        width: 35px;
-        padding: 6px 0px 2px 0px;
+        width: 43px;
+        padding: 0 0 5px 0;
+        margin: 0;
       }
     }
   }
@@ -201,13 +203,16 @@ html {
   display: inline-block;
   text-align: left;
   height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   div {
     margin: 0;
     position: absolute;
     top: 45%;
-    left: 27%;
+    left: 30%;
     transform: translate(-50%, -50%);
-
+    width: 40%;
     p:nth-child(1) {
       font-size: 54px;
       padding-top: 4%;
@@ -220,18 +225,13 @@ html {
       font-size: 28px;
       padding-top: 10%;
     }
-    p:nth-child(4) {
-      font-size: 1.5vw;
-    }
     p {
-      margin-left: 17%;
       color: white;
       text-shadow: 1px 2px 0px #220038;
     }
     button {
       margin: 5% 0 0 0;
-      margin-left: 17%;
-      font-size: 1.2vw;
+      font-size: 20px;
       background-color: transparent;
       border-radius: 28px;
       border: 2px solid #ffffff;
@@ -247,30 +247,45 @@ html {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1480px) {
   .Left {
     div {
       p:nth-child(1) {
-        font-size: 5vw;
+        font-size: 54px;
       }
       p:nth-child(2) {
-        font-size: 9vw;
+        font-size: 94px;
       }
       p:nth-child(3) {
-        font-size: 2vw;
+        font-size: 28px;
       }
-      p:nth-child(5) {
-        font-size: 16vh;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .Left {
+    div {
+      p:nth-child(1) {
+        font-size: 4.5vw;
       }
-      p:nth-child(4) {
-        font-size: 2vw;
+      p:nth-child(2) {
+        font-size: 7.85vw;
       }
-      p {
-        margin-left: 13%;
+      p:nth-child(3) {
+        font-size: 2.3vw;
       }
       button {
-        margin-left: 13%;
+        font-size: 1.7vw;
       }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .Left {
+    div {
+      left: 25%;
     }
   }
 }
@@ -283,13 +298,7 @@ html {
   .Rightdiv {
     position: absolute;
     top: 45%;
-    // left: 20%;
     transform: translate(0%, -50%);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // height: 100vh;
-    // border: 3px solid green;
     .Rezervuokite {
       padding: 13% 0 5% 0;
       text-align: center;
@@ -336,7 +345,6 @@ html {
         width: 70%;
         margin: 5px;
         padding: 15px 18px;
-        // box-sizing: content-box;
         font-size: 16px;
         outline: none;
       }
@@ -364,44 +372,85 @@ html {
       height: 80px;
       margin: 0 auto;
       .musuKontaktai {
-        // padding: 0 0 3% 0;
         font-size: 24px;
-        // text-align: left;
-        display: inline-block;
         width: 21%;
         float: left;
       }
       div {
-        display: inline-block;
         width: 26%;
         float: left;
         div {
           width: 78%;
           padding-left: 2%;
           p:nth-child(1) {
-            // font-size: 1.5vw;
             margin-bottom: 5px;
             float: left;
             padding: 0;
           }
           p:nth-child(2) {
-            // font-size: 1vw;
             color: rgba(148, 148, 148, 0.616);
             float: left;
           }
         }
         img:nth-of-type(1) {
-          height: 10%;
-          width: 20%;
+          height: 30px;
+          width: 32px;
           float: left;
         }
       }
     }
-    p:nth-child(9) {
-      width: 25%;
-      font-size: 2vw;
-      text-align: left;
-      display: inline-block;
+  }
+}
+
+@media (max-width: 1557px) {
+  .Right {
+    .Rightdiv {
+      .kontaktai {
+        // .musuKontaktai {
+        // }
+        div {
+          div {
+            width: 100%;
+            padding-left: 0;
+            text-align: center;
+            p:nth-child(1) {
+              float: none;
+            }
+            p:nth-child(2) {
+              float: none;
+            }
+          }
+          img:nth-of-type(1) {
+            height: 30px;
+            width: 32px;
+            float: none;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1481px) {
+  .Right {
+    .Rightdiv {
+      .inputs {
+        div {
+          width: 100%;
+          margin: 0 auto;
+          .VardasPavarde {
+            width: 70%;
+            margin: 5px;
+          }
+          .Imone {
+            width: 70%;
+            margin: 5px;
+          }
+        }
+      }
     }
   }
 }

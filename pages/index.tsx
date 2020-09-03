@@ -18,7 +18,6 @@ export default function Home() {
   return (
     <section>
       <nav className={classes.LeftSideNav}>
-        <div></div>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
         <div>
           <img
@@ -59,9 +58,6 @@ export default function Home() {
         className={classes.Left}
         style={{
           backgroundImage: "url(" + "/bg.jpg" + ")",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
         }}
       >
         <div>
