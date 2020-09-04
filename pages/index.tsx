@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
+import Footer from "./footer/indexFooter";
 import classes from "./style.module.scss";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
@@ -102,8 +103,12 @@ export default function Home() {
               placeholder="Norima data nuomai"
               className={classes.pildymoLaukai}
             />
-            <select name="Nuomos periodas" className={classes.nuoma}>
-              <option selected disabled value="">
+            <select
+              name="Nuomos periodas"
+              className={classes.nuoma}
+              defaultValue={"DEFAULT"}
+            >
+              <option value="DEFAULT" disabled>
                 Nuomos periodas
               </option>
               <option value="1para">1 para</option>
@@ -141,6 +146,7 @@ export default function Home() {
       <Description refProp={myDes}></Description>
       <Price refProp={myPri}></Price>
       <Faq refProp={myFaq}></Faq>
+      <Footer></Footer>
     </section>
   );
 }
