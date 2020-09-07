@@ -156,8 +156,9 @@ table {
       }
       .text {
         width: 50%;
-        display: inline-block;
+        // display: inline-block;
         text-align: center;
+        float: right;
       }
     }
   }

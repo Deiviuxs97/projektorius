@@ -18,8 +18,8 @@ export default function Footer() {
           <p>+370 6666666</p>
           <p>Rezervacija paštu</p>
         </div>
+        <div className={classes.apacia}>© 2020 projektorius</div>
       </div>
-      <div className={classes.apacia}>© 2020 projektorius</div>
     </footer>
   );
 }
