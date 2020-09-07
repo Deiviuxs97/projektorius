@@ -1,6 +1,7 @@
 import classes from "./faqStyle.module.scss";
 import React, { constructor } from "react";
 import Collapsible from "react-collapsible";
+import Accordion from "./Accordion";
 
 export default function Faq(props) {
   return (
@@ -12,7 +13,40 @@ export default function Faq(props) {
             <img src="/log.png" alt="log" />
           </div>
           <div className={classes.text}>
-            <Collapsible
+            <Accordion
+              title="Kokie projektoriaus parametrai?"
+              content="<p className={classes.CollapsibleText}>
+              This is the collapsible content. It can be any element or React
+              component you like.
+            </p>
+            <p>
+              It can even be another Collapsible component. Check out the next
+              section!
+            </p>"
+            />
+            <Accordion
+              title="Kokie yra ekrano parametrai?"
+              content="<p>
+              This is the collapsible content. It can be any element or React
+              component you like.
+            </p>
+            <p>
+              It can even be another Collapsible component. Check out the next
+              section!
+            </p>"
+            />
+            <Accordion
+              title="Kazkas dar"
+              content="<p>
+              This is the collapsible content. It can be any element or React
+              component you like.
+            </p>
+            <p>
+              It can even be another Collapsible component. Check out the next
+              section!
+            </p>"
+            />
+            {/* <Collapsible
               className={classes.Collapsible}
               trigger="Kokie projektoriaus parametrai?"
             >
@@ -47,7 +81,7 @@ export default function Faq(props) {
                 It can even be another Collapsible component. Check out the next
                 section!
               </p>
-            </Collapsible>
+            </Collapsible> */}
           </div>
         </div>
       </div>
