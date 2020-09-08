@@ -21,11 +21,11 @@ export default function Home() {
       <nav className={classes.LeftSideNav}>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
         <div>
-          <img
+          {/* <img
             src="/SideNavImageFull.png"
             alt="SideNavImages"
             onClick={executeScrollPro}
-          />
+          /> */}
           <p onClick={executeScrollPro}>Projektorius</p>
         </div>
         <div>

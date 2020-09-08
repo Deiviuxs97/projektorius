@@ -142,7 +142,7 @@ table {
       color: #707070;
     }
     .divv {
-      border: 0.125rem solid purple;
+      // border: 0.125rem solid purple;
       width: 60%;
       margin: 0 auto;
       background-color: white;
@@ -156,7 +156,6 @@ table {
       }
       .text {
         width: 50%;
-        // display: inline-block;
         text-align: center;
         float: right;
       }
@@ -190,15 +189,10 @@ table {
   .sectionFaq {
     margin-left: 0;
     .PirmasDivv {
-      // position: relative;
       .duk {
         padding: 14% 0 6% 0;
         font-size: 7vw;
       }
-      // .divv {
-      // position: absolute;
-      // top: 50%;
-      // }
     }
   }
 }

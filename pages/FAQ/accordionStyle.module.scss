@@ -133,21 +133,28 @@ table {
 .accordion__section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  // border-radius: 25px;
 }
 
 .accordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 0;
   display: flex;
   align-items: center;
   border: none;
   outline: none;
+  border-radius: 15px 20px 20px 15px;
+  transition: border-radius 1s ease;
 }
-.accordion:hover,
+.accordion:hover {
+  background-color: #ccc;
+}
 .active {
   background-color: #ccc;
+  border-radius: 15px 20px 20px 0;
 }
 
 .accordion__title {
@@ -155,27 +162,49 @@ table {
   font-weight: 600;
   font-size: 14px;
   float: left;
+  padding: 10px;
+  margin-left: 5px;
 }
 
 .accordion__icon {
+  color: white;
   margin-left: auto;
-  transition: transform 0.6s ease;
+  // transition: transform 2s ease;
+  float: right;
+  padding: 15px;
+  background: linear-gradient(to bottom, #c972ff 5%, #310052 100%);
+  background-color: #c972ff;
+  border-radius: 0 15px 15px 0;
+  transition: border-radius 1s ease;
+}
+.accordion__border {
+  width: 5%;
+  height: 50%;
+  background-color: salmon;
   float: right;
 }
 
-.rotate {
-  transform: rotate(90deg);
+.accordion__change {
+  background: 0;
+  background-color: #c972ff;
+  border-radius: 0 15px 0 0;
+  color: black;
 }
 .accordion__content {
-  background-color: white;
+  background-color: #eee;
   overflow: hidden;
   transition: max-height 0.6s ease;
   max-height: 0;
+  // border-radius: 0 25px 25px 0;
+  border-radius: 0 0 15px 15px;
 }
 
 .accordion__text {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  padding: 18px;
+  margin: 14px;
+  text-align: left;
+  float: left;
+  width: 80%;
 }

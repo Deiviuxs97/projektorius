@@ -1,5 +1,5 @@
 import classes from "./faqStyle.module.scss";
-import React, { constructor } from "react";
+import React, { constructor, useState } from "react";
 import Collapsible from "react-collapsible";
 import Accordion from "./Accordion";
 
@@ -15,7 +15,7 @@ export default function Faq(props) {
           <div className={classes.text}>
             <Accordion
               title="Kokie projektoriaus parametrai?"
-              content="<p className={classes.CollapsibleText}>
+              content="<p>
               This is the collapsible content. It can be any element or React
               component you like.
             </p>
@@ -46,42 +46,6 @@ export default function Faq(props) {
               section!
             </p>"
             />
-            {/* <Collapsible
-              className={classes.Collapsible}
-              trigger="Kokie projektoriaus parametrai?"
-            >
-              <p className={classes.CollapsibleText}>
-                This is the collapsible content. It can be any element or React
-                component you like.
-              </p>
-              <p>
-                It can even be another Collapsible component. Check out the next
-                section!
-              </p>
-            </Collapsible>
-            <Collapsible
-              className={classes.Collapsible}
-              trigger="Kokie yra ekrano parametrai?"
-            >
-              <p>
-                This is the collapsible content. It can be any element or React
-                component you like.
-              </p>
-              <p>
-                It can even be another Collapsible component. Check out the next
-                section!
-              </p>
-            </Collapsible>
-            <Collapsible className={classes.Collapsible} trigger="Kazkas dar">
-              <p>
-                This is the collapsible content. It can be any element or React
-                component you like.
-              </p>
-              <p>
-                It can even be another Collapsible component. Check out the next
-                section!
-              </p>
-            </Collapsible> */}
           </div>
         </div>
       </div>
