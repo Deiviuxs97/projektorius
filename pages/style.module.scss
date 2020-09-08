@@ -495,22 +495,22 @@ html {
       .Rezervuokite {
         padding: 4.6875rem 0 1.25rem 0;
       }
-      .inputs {
-        select:first-child {
-        }
-        option:first-child {
-        }
-        div {
-          .VardasPavarde {
-          }
-          .Imone {
-          }
-        }
-        .pildymoLaukai {
-        }
-        .nuoma {
-        }
-      }
+      // .inputs {
+      //   select:first-child {
+      //   }
+      //   option:first-child {
+      //   }
+      //   div {
+      //     .VardasPavarde {
+      //     }
+      //     .Imone {
+      //     }
+      //   }
+      //   .pildymoLaukai {
+      //   }
+      //   .nuoma {
+      //   }
+      // }
       .RezervuotiButton {
         margin: 0.625rem auto 5rem;
       }
@@ -524,13 +524,13 @@ html {
         }
         div {
           float: unset;
-          display: inline-block;
-          div {
-            p:nth-child(1) {
-            }
-            p:nth-child(2) {
-            }
-          }
+          // display: inline-block;
+          // div {
+          //   p:nth-child(1) {
+          //   }
+          //   p:nth-child(2) {
+          //   }
+          // }
           img:nth-of-type(1) {
             height: unset;
             width: unset;

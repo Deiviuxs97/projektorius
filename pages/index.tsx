@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, constructor } from "react";
+import ReactDom from "react-dom";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
