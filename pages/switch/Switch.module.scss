@@ -128,66 +128,73 @@ table {
   border-spacing: 0;
 }
 
-/* ---------------------------------------------------- */
+// ------------------------------------
 
-.footer {
-  background-color: #f7f7f7;
-  height: 20vh;
-  margin-left: 5.625rem;
-  .virsus {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 1.5rem;
-
-    .virsusPirmas {
-      width: 80%;
-      display: inline-block;
-      p:nth-child(1) {
-        font-size: 1.875rem;
-        margin-left: 2%;
-      }
-      hr {
-        border-top: 0.125rem solid purple;
-        margin: 2% 0 2% 0;
-      }
-      p:nth-child(3) {
-        margin-left: 2%;
-      }
-    }
-    .virsusAntras {
-      width: 18%;
-      border: 0.125rem solid purple;
-      float: right;
-      p:nth-child(1) {
-        font-size: 1.375rem;
-        margin: 7% 0 5% 12%;
-      }
-      hr {
-        width: 85%;
-        border-top: 0.125rem solid purple;
-      }
-      p:nth-child(3) {
-        margin: 6% 0 5% 12%;
-      }
-      p:nth-child(4) {
-        margin: 6% 0 5% 12%;
-      }
-    }
-  }
-  .apacia {
-    margin-top: 3.5rem;
-    text-align: center;
-    background-color: #f7f7f7;
-  }
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 28px;
+  margin: 20% 15% 10% 15%;
+  cursor: pointer;
 }
 
 @media (max-width: 1100px) {
-  .footer {
-    margin-left: unset;
-    // .virsus {
-    //   .virsusAntras {
-    //     width: 9rem;
-    //   }
-    // }
+  .switch {
+    margin: 0 0 0.3125rem 0;
+    width: 57px;
+    height: 25px;
+  }
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid rgb(200, 200, 200);
+  // background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  top: 2px;
+  border: 2px solid rgb(200, 200, 200);
+  // background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+@media (max-width: 1100px) {
+  .slider:before {
+    height: 13px;
+    width: 13px;
+  }
+}
+
+input:checked + .slider:before {
+  transform: translateX(33px);
+  background-color: #a63aff;
+}
+
+@media (max-width: 1100px) {
+  input:checked + .slider:before {
+    transform: translateX(29px);
   }
 }

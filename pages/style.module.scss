@@ -408,6 +408,7 @@ html {
       div {
         width: 26%;
         float: left;
+
         div {
           width: 78%;
           padding-left: 2%;
@@ -419,6 +420,7 @@ html {
           p:nth-child(2) {
             color: rgba(148, 148, 148, 0.616);
             float: left;
+            width: 100%;
           }
         }
         img:nth-of-type(1) {
@@ -438,6 +440,7 @@ html {
         // .musuKontaktai {
         // }
         div {
+          display: inline-block;
           div {
             width: 100%;
             padding-left: 0;

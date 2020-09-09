@@ -1,10 +1,10 @@
-import React, { useRef, constructor } from "react";
-import ReactDom from "react-dom";
+import React, { useRef, constructor, useState } from "react";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
 import Footer from "./footer/indexFooter";
 import classes from "./style.module.scss";
+import Switch from "./switch/Switch";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -17,40 +17,32 @@ export default function Home() {
   const executeScrollDes = () => scrollToRef(myDes);
   const executeScrollPri = () => scrollToRef(myPri);
   const executeScrollFaq = () => scrollToRef(myFaq);
+  // if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  //   console.log(document.body.scrollTop);
+  //   console.log(document.documentElement.scrollTop);
+  // }
+  // if (window !== undefined) {
+  //   var y = window.scrollY;
+  // }
+  // console.log(y);
   return (
     <section>
       <nav className={classes.LeftSideNav}>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
         <div>
-          {/* <img
-            src="/SideNavImageFull.png"
-            alt="SideNavImages"
-            onClick={executeScrollPro}
-          /> */}
+          <Switch onClick={executeScrollPro} clicked={"executeScrollPro"} />
           <p onClick={executeScrollPro}>Projektorius</p>
         </div>
         <div>
-          <img
-            src="/SideNavImages.png"
-            alt="SideNavImages"
-            onClick={executeScrollDes}
-          />
+          <Switch onClick={executeScrollDes} />
           <p onClick={executeScrollDes}>Aprašymas</p>
         </div>
         <div>
-          <img
-            src="/SideNavImages.png"
-            alt="SideNavImages"
-            onClick={executeScrollPri}
-          />
+          <Switch onClick={executeScrollPri} />
           <p onClick={executeScrollPri}>Kaina</p>
         </div>
         <div>
-          <img
-            src="/SideNavImages.png"
-            alt="SideNavImages"
-            onClick={executeScrollFaq}
-          />
+          <Switch onClick={executeScrollFaq} />
           <p onClick={executeScrollFaq}>DUK</p>
         </div>
       </nav>

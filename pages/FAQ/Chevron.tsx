@@ -1,8 +1,16 @@
 import React from "react";
+// import Minus from "../../public/minus-solid.svg";
 
 function Chevron(props) {
   if (!props.active) {
     return (
+      // <img
+      //   className={props.className}
+      //   height={props.height}
+      //   width={props.width}
+      //   src={Minus}
+      //   alt="minus"
+      // />
       <svg
         className={props.className}
         height={props.height}
