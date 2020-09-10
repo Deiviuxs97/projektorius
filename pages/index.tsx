@@ -1,4 +1,4 @@
-import React, { useRef, constructor, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
@@ -17,20 +17,37 @@ export default function Home() {
   const executeScrollDes = () => scrollToRef(myDes);
   const executeScrollPri = () => scrollToRef(myPri);
   const executeScrollFaq = () => scrollToRef(myFaq);
-  // if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  //   console.log(document.body.scrollTop);
-  //   console.log(document.documentElement.scrollTop);
-  // }
-  // if (window !== undefined) {
-  //   var y = window.scrollY;
-  // }
-  // console.log(y);
+  // const handleScroll = () => {
+  //   if (window.innerHeight >= window.scrollY) {
+  //     console.log("pirmas");
+  //   }
+  //   if (
+  //     window.innerHeight <= window.scrollY &&
+  //     window.innerHeight * 2 >= window.scrollY
+  //   ) {
+  //     console.log("antras");
+  //   }
+  //   if (
+  //     window.innerHeight * 2 <= window.scrollY &&
+  //     window.innerHeight * 3 >= window.scrollY
+  //   ) {
+  //     console.log("trecias");
+  //   }
+  //   if (window.innerHeight * 3 <= window.scrollY) {
+  //     console.log("ketvirtas");
+  //   }
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
+
   return (
     <section>
       <nav className={classes.LeftSideNav}>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
         <div>
-          <Switch onClick={executeScrollPro} clicked={"executeScrollPro"} />
+          <Switch onClick={executeScrollPro} />
           <p onClick={executeScrollPro}>Projektorius</p>
         </div>
         <div>
