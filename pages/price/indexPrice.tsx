@@ -1,7 +1,6 @@
 import { useState } from "react";
 import classes from "./priceStyle.module.scss";
 import Modal from "./Modal";
-import { Z_FIXED } from "zlib";
 
 export default function Price(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -18,15 +17,15 @@ export default function Price(props) {
             <p>Projektorius</p>
           </div>
           <div className={classes.rai}>
+            <div className={classes.img}>
+              <img src="/log.png" alt="log" />
+            </div>
             <div className={classes.raiska}>
               <p>
                 Raiška - <br></br>Kontrastas - <br></br>Ryškumas - <br></br>
                 Jungtys - <br></br>Garsiakalbis<br></br>
                 Valdymo pultas
               </p>
-            </div>
-            <div className={classes.img}>
-              <img src="/log.png" alt="log" />
             </div>
           </div>
           <div className={classes.tableBot}>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Description from "./description/indexDescription";
 import Price from "./price/indexPrice";
 import Faq from "./FAQ/indexFaq";
@@ -13,53 +13,161 @@ export default function Home() {
   const myDes = useRef(null);
   const myPri = useRef(null);
   const myFaq = useRef(null);
-  const executeScrollPro = () => scrollToRef(myPro);
-  const executeScrollDes = () => scrollToRef(myDes);
-  const executeScrollPri = () => scrollToRef(myPri);
-  const executeScrollFaq = () => scrollToRef(myFaq);
-  // const handleScroll = () => {
-  //   if (window.innerHeight >= window.scrollY) {
-  //     console.log("pirmas");
-  //   }
-  //   if (
-  //     window.innerHeight <= window.scrollY &&
-  //     window.innerHeight * 2 >= window.scrollY
-  //   ) {
-  //     console.log("antras");
-  //   }
-  //   if (
-  //     window.innerHeight * 2 <= window.scrollY &&
-  //     window.innerHeight * 3 >= window.scrollY
-  //   ) {
-  //     console.log("trecias");
-  //   }
-  //   if (window.innerHeight * 3 <= window.scrollY) {
-  //     console.log("ketvirtas");
-  //   }
-  // };
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
 
+  //---------------------------------------------- States
+  const [switchedFirst, setSwitchedFirst] = useState(true);
+  const [switchedS, setSwitchedS] = useState(false);
+  const [switchedT, setSwitchedT] = useState(false);
+  const [switchedF, setSwitchedF] = useState(false);
+
+  //---------------------------------------------- Click part
+  const executeScrollPro = () => {
+    scrollToRef(myPro);
+    setSwitchedFirst(true);
+    setSwitchedS(false);
+    setSwitchedT(false);
+    setSwitchedF(false);
+    console.log("Click one");
+    // console.log(switchedFirst);
+    // console.log(switchedS);
+    // console.log(switchedT);
+    // console.log(switchedF);
+  };
+  const executeScrollDes = () => {
+    scrollToRef(myDes);
+    setSwitchedFirst(false);
+    setSwitchedS(true);
+    setSwitchedT(false);
+    setSwitchedF(false);
+    console.log("Click two");
+    // console.log(switchedFirst);
+    // console.log(switchedS);
+    // console.log(switchedT);
+    // console.log(switchedF);
+  };
+  const executeScrollPri = () => {
+    scrollToRef(myPri);
+    setSwitchedFirst(false);
+    setSwitchedS(false);
+    setSwitchedT(true);
+    setSwitchedF(false);
+  };
+  const executeScrollFaq = () => {
+    scrollToRef(myFaq);
+    setSwitchedFirst(false);
+    setSwitchedS(false);
+    setSwitchedT(false);
+    setSwitchedF(true);
+  };
+
+  //---------------------------------------------- Scroll part
+  const handleScroll = () => {
+    if (window.innerWidth >= 1100) {
+      // console.log(window.innerWidth, ">1100");
+      if (window.innerHeight >= window.scrollY) {
+        // console.log("pirmas");
+        setSwitchedFirst(true);
+        setSwitchedS(false);
+        setSwitchedT(false);
+        setSwitchedF(false);
+        // console.log(switchedFirst);
+        // console.log(switchedS);
+        // console.log(switchedT);
+        // console.log(switchedF);
+      }
+      if (
+        window.innerHeight <= window.scrollY &&
+        window.innerHeight * 2 >= window.scrollY
+      ) {
+        // console.log("antras");
+        setSwitchedFirst(false);
+        setSwitchedS(true);
+        setSwitchedT(false);
+        setSwitchedF(false);
+        // console.log(switchedFirst);
+        // console.log("aprasymas scrolas");
+        // console.log(switchedT);
+        // console.log(switchedF);
+      }
+      if (
+        window.innerHeight * 2 <= window.scrollY &&
+        window.innerHeight * 3 >= window.scrollY
+      ) {
+        // console.log("trecias");
+        setSwitchedFirst(false);
+        setSwitchedS(false);
+        setSwitchedT(true);
+        setSwitchedF(false);
+      }
+      if (window.innerHeight * 3 <= window.scrollY) {
+        // console.log("ketvirtas");
+        setSwitchedFirst(false);
+        setSwitchedS(false);
+        setSwitchedT(false);
+        setSwitchedF(true);
+      }
+    } else {
+      // console.log(window.innerWidth, "<1100");
+      if (window.innerHeight >= window.scrollY) {
+        // console.log("pirmas");
+        setSwitchedFirst(true);
+        setSwitchedS(false);
+        setSwitchedT(false);
+        setSwitchedF(false);
+      }
+      if (
+        window.innerHeight <= window.scrollY &&
+        window.innerHeight * 3 >= window.scrollY
+      ) {
+        // console.log("antras");
+        setSwitchedFirst(false);
+        setSwitchedS(true);
+        setSwitchedT(false);
+        setSwitchedF(false);
+      }
+      if (
+        window.innerHeight * 3 <= window.scrollY &&
+        window.innerHeight * 4 >= window.scrollY
+      ) {
+        // console.log("trecias");
+        setSwitchedFirst(false);
+        setSwitchedS(false);
+        setSwitchedT(true);
+        setSwitchedF(false);
+      }
+      if (window.innerHeight * 4 <= window.scrollY) {
+        // console.log("ketvirtas");
+        setSwitchedFirst(false);
+        setSwitchedS(false);
+        setSwitchedT(false);
+        setSwitchedF(true);
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  //---------------------------------------------- Return
   return (
     <section>
       <nav className={classes.LeftSideNav}>
         <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
         <div>
-          <Switch onClick={executeScrollPro} />
+          <Switch onClick={executeScrollPro} switchState={switchedFirst} />
           <p onClick={executeScrollPro}>Projektorius</p>
         </div>
         <div>
-          <Switch onClick={executeScrollDes} />
+          <Switch onClick={executeScrollDes} switchState={switchedS} />
           <p onClick={executeScrollDes}>Aprašymas</p>
         </div>
         <div>
-          <Switch onClick={executeScrollPri} />
+          <Switch onClick={executeScrollPri} switchState={switchedT} />
           <p onClick={executeScrollPri}>Kaina</p>
         </div>
         <div>
-          <Switch onClick={executeScrollFaq} />
+          <Switch onClick={executeScrollFaq} switchState={switchedF} />
           <p onClick={executeScrollFaq}>DUK</p>
         </div>
       </nav>

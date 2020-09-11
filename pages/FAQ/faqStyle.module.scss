@@ -193,6 +193,21 @@ table {
         padding: 10% 0 16% 0;
         font-size: 7vw;
       }
+      .divv {
+        .img {
+          // display: none;
+          width: 0;
+          img {
+            width: 0;
+            display: none;
+          }
+        }
+        .text {
+          float: unset;
+          margin: 0 auto;
+          width: 80%;
+        }
+      }
     }
   }
 }
