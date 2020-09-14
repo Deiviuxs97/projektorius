@@ -15,8 +15,14 @@ export default function Footer() {
         <div className={classes.desine}>
           <p>Kontaktai</p>
           <hr></hr>
-          <p>+370 6666666</p>
-          <p>Rezervacija paštu</p>
+          <ul>
+            <li>
+              <a href="tel:+370 6666666">+370 666 6666</a>
+            </li>
+            <li>
+              <a href="mailto:test@test.com">Rezervacija paštu</a>
+            </li>
+          </ul>
         </div>
         <div className={classes.apacia}>© 2020 projektorius</div>
       </div>

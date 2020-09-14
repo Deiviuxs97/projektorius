@@ -5,6 +5,7 @@ import Faq from "./FAQ/indexFaq";
 import Footer from "./footer/indexFooter";
 import classes from "./style.module.scss";
 import Switch from "./switch/Switch";
+import SendButton from "./emailSend/SendButton";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -27,11 +28,7 @@ export default function Home() {
     setSwitchedS(false);
     setSwitchedT(false);
     setSwitchedF(false);
-    console.log("Click one");
-    // console.log(switchedFirst);
-    // console.log(switchedS);
-    // console.log(switchedT);
-    // console.log(switchedF);
+    // console.log("Click one");
   };
   const executeScrollDes = () => {
     scrollToRef(myDes);
@@ -39,11 +36,7 @@ export default function Home() {
     setSwitchedS(true);
     setSwitchedT(false);
     setSwitchedF(false);
-    console.log("Click two");
-    // console.log(switchedFirst);
-    // console.log(switchedS);
-    // console.log(switchedT);
-    // console.log(switchedF);
+    // console.log("Click two");
   };
   const executeScrollPri = () => {
     scrollToRef(myPri);
@@ -62,7 +55,7 @@ export default function Home() {
 
   //---------------------------------------------- Scroll part
   const handleScroll = () => {
-    if (window.innerWidth >= 1100) {
+    if (window.innerWidth > 1100) {
       // console.log(window.innerWidth, ">1100");
       if (window.innerHeight >= window.scrollY) {
         // console.log("pirmas");
@@ -70,10 +63,6 @@ export default function Home() {
         setSwitchedS(false);
         setSwitchedT(false);
         setSwitchedF(false);
-        // console.log(switchedFirst);
-        // console.log(switchedS);
-        // console.log(switchedT);
-        // console.log(switchedF);
       }
       if (
         window.innerHeight <= window.scrollY &&
@@ -84,10 +73,6 @@ export default function Home() {
         setSwitchedS(true);
         setSwitchedT(false);
         setSwitchedF(false);
-        // console.log(switchedFirst);
-        // console.log("aprasymas scrolas");
-        // console.log(switchedT);
-        // console.log(switchedF);
       }
       if (
         window.innerHeight * 2 <= window.scrollY &&
@@ -148,6 +133,8 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  //---------------------------------------------- nodemailer
 
   //---------------------------------------------- Return
   return (
@@ -234,7 +221,7 @@ export default function Home() {
               <option value="more">Daugiau nei 2 poros</option>
             </select>
           </form>
-          <button className={classes.RezervuotiButton}>Rezervuoti</button>
+          <SendButton></SendButton>
           <div className={classes.kontaktai}>
             <p className={classes.musuKontaktai}>Mūsų kontaktai:</p>
             <div>

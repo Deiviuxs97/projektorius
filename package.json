@@ -10,7 +10,9 @@
   "dependencies": {
     "@types/jquery": "^3.5.1",
     "@zeit/next-typescript": "^1.1.1",
+    "dotenv": "^8.2.0",
     "next": "9.3.5",
+    "nodemailer": "^6.4.11",
     "react": "16.13.1",
     "react-collapsible": "^2.8.0",
     "react-dom": "16.13.1",
@@ -28,5 +30,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browser": {
+    "child_process": false
+  }
 }

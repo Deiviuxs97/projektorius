@@ -190,8 +190,8 @@ table {
     margin-left: 0;
     .PirmasDivv {
       .duk {
-        padding: 10% 0 16% 0;
-        font-size: 7vw;
+        padding: 7rem 0 5rem 0;
+        font-size: 4rem;
       }
       .divv {
         .img {
@@ -205,6 +205,32 @@ table {
         .text {
           float: unset;
           margin: 0 auto;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionFaq {
+    height: 100vh;
+    margin-left: 0;
+    .PirmasDivv {
+      .duk {
+        padding: 7rem 0 5rem 0;
+        // font-size: 3rem;
+        text-align: center;
+        font-weight: bold;
+        color: #707070;
+      }
+      .divv {
+        // border: 0.125rem solid purple;
+        width: 80%;
+        margin: 0 auto;
+        background-color: white;
+
+        .text {
           width: 80%;
         }
       }

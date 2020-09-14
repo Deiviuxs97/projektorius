@@ -180,7 +180,7 @@ table {
     margin-left: unset;
     .FirstDiv {
       div {
-        padding-top: 7%;
+        padding-top: 5rem;
         .bigText {
           font-size: 3.9625rem;
         }
@@ -190,12 +190,94 @@ table {
       }
     }
     .SecondDiv {
-      width: 60%;
+      width: 66%;
       margin: 0 auto;
 
       .aprasymas {
         width: 100%;
         padding-top: 3%;
+      }
+      .foto {
+        width: 60%;
+        img {
+          width: 100%;
+          padding-top: 8%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .sectionDescription {
+    .FirstDiv {
+      div {
+        .bigText {
+          font-size: 3.5rem;
+        }
+        .onBigText {
+          font-size: 1.8rem;
+          padding: 3.7% 0 0 5%;
+        }
+      }
+    }
+    .SecondDiv {
+      .aprasymas {
+      }
+      .foto {
+        img {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .sectionDescription {
+    .FirstDiv {
+      div {
+        .bigText {
+          font-size: 3rem;
+        }
+        .onBigText {
+          font-size: 1.6rem;
+          padding: 3.4% 0 0 5%;
+        }
+      }
+    }
+    .SecondDiv {
+      .aprasymas {
+      }
+      .foto {
+        img {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionDescription {
+    margin-left: unset;
+    .FirstDiv {
+      div {
+        padding-top: 5rem;
+        .bigText {
+          font-size: 2.8rem;
+        }
+        .onBigText {
+          font-size: 1.5rem;
+          padding: 3.8% 0 0 5%;
+        }
+      }
+    }
+    .SecondDiv {
+      width: 60%;
+      margin: 0 auto;
+
+      .aprasymas {
+        width: 100%;
+        padding-top: unset;
       }
       .foto {
         width: 60%;
