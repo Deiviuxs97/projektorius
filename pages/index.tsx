@@ -5,7 +5,7 @@ import Faq from "./FAQ/indexFaq";
 import Footer from "./footer/indexFooter";
 import classes from "./style.module.scss";
 import Switch from "./switch/Switch";
-import SendButton from "./emailSend/SendButton";
+import axios from "axios";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -21,7 +21,15 @@ export default function Home() {
   const [switchedT, setSwitchedT] = useState(false);
   const [switchedF, setSwitchedF] = useState(false);
 
-  //---------------------------------------------- Click part
+  // Form States
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
+  //---------------------------------------------- Nav click part
   const executeScrollPro = () => {
     scrollToRef(myPro);
     setSwitchedFirst(true);
@@ -134,7 +142,53 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  //---------------------------------------------- nodemailer
+  //---------------------------------------------- Form handle
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    if (e.target.id === "name") {
+      setName(e.target.value);
+    } else if (e.target.id === "company") {
+      setCompany(e.target.value);
+    } else if (e.target.id === "email") {
+      setEmail(e.target.value);
+    } else if (e.target.id === "phone") {
+      setPhone(e.target.value);
+    } else if (e.target.id === "date") {
+      setDate(e.target.value);
+    } else if (e.target.id === "time") {
+      setTime(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      name !== "" &&
+      email !== "" &&
+      phone !== "" &&
+      date !== "" &&
+      time !== ""
+    ) {
+      const dataToSubmit = {
+        name,
+        company,
+        email,
+        phone,
+        date,
+        time,
+      };
+      axios.post("http://localhost:5000/send/sendemail", dataToSubmit);
+    } else {
+      console.log(name);
+      console.log(company);
+      console.log(email);
+      console.log(phone);
+      console.log(date);
+      console.log(time);
+    }
+  };
 
   //---------------------------------------------- Return
   return (
@@ -180,48 +234,92 @@ export default function Home() {
       <div className={classes.Right}>
         <div className={classes.Rightdiv}>
           <p className={classes.Rezervuokite}>Rezervuokite</p>
-          <form className={classes.inputs}>
+          <form
+            id="contact"
+            action="/"
+            method="post"
+            className={classes.inputs}
+          >
             <div>
               <input
+                id="name"
                 type="text"
                 placeholder="Vardas, Pavardė"
+                // value={name}
                 className={classes.VardasPavarde}
+                required
+                onChange={handleChange}
               />
+
               <input
+                id="company"
                 type="text"
                 placeholder="Įmonė (jeigu užsako įmonė)"
+                // value={company}
                 className={classes.Imone}
-              ></input>
+                onChange={handleChange}
+              />
             </div>
+
             <input
-              type="text"
+              id="email"
+              type="email"
               placeholder="Elektroninis paštas"
+              // value={email}
               className={classes.pildymoLaukai}
+              required
+              onChange={handleChange}
             />
+
             <input
-              type="text"
+              id="phone"
+              type="tel"
               placeholder="Telefonas"
+              // value={phone}
               className={classes.pildymoLaukai}
+              required
+              onChange={handleChange}
             />
+
             <input
+              id="date"
               type="text"
-              placeholder="Norima data nuomai"
+              placeholder="Norima data nuomai (Rugsejis 17, 2020)"
+              // value={date}
               className={classes.pildymoLaukai}
+              required
+              onChange={handleChange}
             />
+
             <select
-              name="Nuomos periodas"
+              id="time"
+              // name="Nuomos periodas"
               className={classes.nuoma}
               defaultValue={"DEFAULT"}
+              required
+              onChange={handleChange}
             >
               <option value="DEFAULT" disabled>
                 Nuomos periodas
               </option>
-              <option value="1para">1 para</option>
-              <option value="2paros">2 paros</option>
-              <option value="more">Daugiau nei 2 poros</option>
+              <option value="vienai parai">1 para</option>
+              <option value="dviejoms paroms">2 paros</option>
+              <option value="daugiau nei dviejoms paroms">
+                Daugiau nei 2 paros
+              </option>
             </select>
+
+            <button
+              name="submit"
+              type="submit"
+              id="contact-submit"
+              data-submit="...Sending"
+              className={classes.RezervuotiButton}
+              onClick={handleSubmit}
+            >
+              Rezervuoti
+            </button>
           </form>
-          <SendButton></SendButton>
           <div className={classes.kontaktai}>
             <p className={classes.musuKontaktai}>Mūsų kontaktai:</p>
             <div>

@@ -10,7 +10,9 @@
   "dependencies": {
     "@types/jquery": "^3.5.1",
     "@zeit/next-typescript": "^1.1.1",
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
+    "http-proxy-middleware": "^1.0.5",
     "next": "9.3.5",
     "nodemailer": "^6.4.11",
     "react": "16.13.1",
@@ -30,8 +32,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "browser": {
-    "child_process": false
-  }
+  "license": "ISC"
 }
