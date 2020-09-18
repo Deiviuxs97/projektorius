@@ -6,6 +6,8 @@ import Footer from "./footer/indexFooter";
 import classes from "./style.module.scss";
 import Switch from "./switch/Switch";
 import axios from "axios";
+import Errors from "./err/errors";
+import Head from "next/head";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -28,6 +30,9 @@ export default function Home() {
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+
+  // Errors States
+  const [data, setData] = useState(null);
 
   //---------------------------------------------- Nav click part
   const executeScrollPro = () => {
@@ -181,20 +186,51 @@ export default function Home() {
       };
       axios.post("http://localhost:5000/send/sendemail", dataToSubmit);
     } else {
-      console.log(name);
-      console.log(company);
-      console.log(email);
-      console.log(phone);
-      console.log(date);
-      console.log(time);
+      let dataToSubmit = {
+        name,
+        company,
+        email,
+        phone,
+        date,
+        time,
+      };
+      setData(dataToSubmit);
     }
   };
 
   //---------------------------------------------- Return
   return (
     <section>
-      <nav className={classes.LeftSideNav}>
-        <img src="/LogoMakr.png" alt="Logo" className={classes.img} />
+      <Head>
+        <title>Projektorius Epson</title>
+        {/* <meta
+          property="og:title"
+          content="Oficialus Džong Juan Čigongas tinklapis Lietuvoje"
+        />
+        <meta
+          property="og:image"
+          content="http://www.zyq108.lt/images/Logo.png"
+        />
+        <meta property="og:site_name" content="ZYQ108" />
+        <meta property="og:url" content="http://www.zyq108.lt/" />
+        <meta
+          property="og:description"
+          content="Tinklapis skirtas Džong Juan Čigongo mokyklos renginių bei informacijos viešinimui."
+        /> */}
+      </Head>
+      <nav
+        itemScope
+        itemType="https://schema.org/SiteNavigationElement
+        "
+        className={classes.LeftSideNav}
+      >
+        <img
+          itemScope
+          itemType="https://schema.org/image"
+          src="/LogoMakr.png"
+          alt="Logo"
+          className={classes.img}
+        />
         <div>
           <Switch onClick={executeScrollPro} switchState={switchedFirst} />
           <p onClick={executeScrollPro}>Projektorius</p>
@@ -210,6 +246,11 @@ export default function Home() {
         <div>
           <Switch onClick={executeScrollFaq} switchState={switchedF} />
           <p onClick={executeScrollFaq}>DUK</p>
+        </div>
+        <div className={classes.DrawerToggle}>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </nav>
 
@@ -239,6 +280,8 @@ export default function Home() {
             action="/"
             method="post"
             className={classes.inputs}
+            itemScope
+            itemType="https://schema.org/Reservation"
           >
             <div>
               <input
@@ -308,7 +351,7 @@ export default function Home() {
                 Daugiau nei 2 paros
               </option>
             </select>
-
+            <Errors data={data}></Errors>
             <button
               name="submit"
               type="submit"

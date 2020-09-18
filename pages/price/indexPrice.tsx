@@ -21,11 +21,12 @@ export default function Price(props) {
               <img src="/log.png" alt="log" />
             </div>
             <div className={classes.raiska}>
-              <p>
-                Raiška - <br></br>Kontrastas - <br></br>Ryškumas - <br></br>
-                Jungtys - <br></br>Garsiakalbis<br></br>
-                Valdymo pultas
-              </p>
+              <p>Raiška -</p>
+              <p>Kontrastas -</p>
+              <p>Ryškumas -</p>
+              <p>Jungtys -</p>
+              <p>Garsiakalbis</p>
+              <p>Valdymo pultas</p>
             </div>
           </div>
           <div className={classes.tableBot}>

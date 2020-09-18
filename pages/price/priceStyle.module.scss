@@ -157,8 +157,9 @@ $background-color: rgb(247, 247, 247);
         }
       }
       .rai {
-        width: 85%;
-        margin: 0 auto;
+        // width: 85%;
+        // margin: 0 auto;
+        display: flex;
         .img {
           width: 50%;
           display: inline-block;
@@ -168,8 +169,8 @@ $background-color: rgb(247, 247, 247);
           }
         }
         .raiska {
-          width: 35%;
-          float: right;
+          width: 48%;
+          // float: right;
           p {
             line-height: 1.6;
           }
@@ -201,91 +202,53 @@ $background-color: rgb(247, 247, 247);
   }
 }
 
-// @media (max-width: 1100px) {
-//   .sectionPrice {
-//     margin-left: unset;
-//     height: 100vh;
-//     background-color: $background-color;
-//     .PirmasDiv {
-//       .kaina {
-//         padding: 10% 0 14% 0;
-//         text-align: center;
-//         font-size: 420%;
-//         font-weight: bold;
-//         color: #707070;
-//       }
-//       .div {
-//         margin: 0 auto;
-//         border: 0.125rem solid purple;
-//         width: 60%;
-//         background-color: white;
-//         .projektorius {
-//           p {
-//             padding: 2% 0;
-//             text-align: center;
-//             font-size: 2.125rem;
-//           }
-//         }
-//         .rai {
-//           width: 85%;
-//           margin: 0 auto;
-//           .raiska {
-//             display: block;
-//             margin: 2% auto;
-//             width: 100%;
-//             text-align: center;
-//             // float: left;
-//             p {
-//               margin: 0 auto;
-//               line-height: 1.6;
-//             }
-//           }
-//           .img {
-//             width: 70%;
-//             display: block;
-//             margin: 0 auto;
-//             // display: inline-block;
-//             text-align: center;
-//             img {
-//               width: 50%;
-//             }
-//           }
-//         }
-//         .tableBot {
-//           margin: 4% 0 0 0;
-//           text-align: center;
-//           .rezervacija {
-//             text-align: center;
-//             font-size: 1.5vw;
-//             margin: 1% auto;
-//             padding: 1% 3%;
-//             display: block;
-//             background: linear-gradient(to bottom, #c972ff 5%, #310052 100%);
-//             background-color: #c972ff;
-//             border: 0.125rem solid #ffffff;
-//             cursor: pointer;
-//             color: #ffffff;
-//             padding: 0.75rem 1.9375rem;
-//             text-shadow: 0 0.0625rem 0 #220038;
-//           }
-//           .rezervacija:hover {
-//             background: linear-gradient(to bottom, #310052 5%, #c972ff 100%);
-//             background-color: #c972ff;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+@media (max-width: 1500px) {
+  .sectionPrice {
+    .PirmasDiv {
+      .kaina {
+      }
+      .div {
+        .projektorius {
+          p {
+          }
+        }
+        .rai {
+          display: block;
+          .img {
+            display: block;
+            margin: 0 auto;
+            img {
+              width: 70%;
+            }
+          }
+          .raiska {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            p {
+            }
+          }
+        }
+        .tableBot {
+          .rezervacija {
+          }
+          .rezervacija:hover {
+          }
+        }
+      }
+    }
+  }
+}
 
 @media (max-width: 1100px) {
   .sectionPrice {
     margin-left: unset;
-    height: 100vh;
+    height: unset;
     background-color: $background-color;
     .PirmasDiv {
+      padding-bottom: 4%;
       .kaina {
-        padding: 7rem 0 5rem 0;
+        padding: 7rem 0 3rem 0;
         text-align: center;
         font-size: 4rem;
         font-weight: bold;
@@ -297,6 +260,7 @@ $background-color: rgb(247, 247, 247);
         width: 60%;
         background-color: white;
         .projektorius {
+          margin: 1rem;
           p {
             padding: 2% 0;
             text-align: center;
@@ -324,13 +288,17 @@ $background-color: rgb(247, 247, 247);
             // display: inline-block;
             text-align: center;
             img {
-              width: 50%;
+              width: 67;
             }
           }
         }
         .tableBot {
-          margin: 4% 0 0 0;
+          // margin: 4% 0 0 0;
           text-align: center;
+          p {
+            width: 10%;
+            margin: 0 auto;
+          }
           .rezervacija {
             text-align: center;
             font-size: unset;

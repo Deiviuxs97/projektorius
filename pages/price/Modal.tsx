@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classes from "./priceStyle.module.scss";
 import axios from "axios";
+import Errors from "../err/errors";
 
 export default function Modal({ isOpen, onRequestClose }) {
   // Form States
@@ -11,6 +12,12 @@ export default function Modal({ isOpen, onRequestClose }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
+  // Errors States
+  const [data, setData] = useState(null);
+
+  const statet = () => {
+    setData(null);
+  };
   //---------------------------------------------- Form handle
 
   const handleChange = (e) => {
@@ -50,12 +57,15 @@ export default function Modal({ isOpen, onRequestClose }) {
       };
       axios.post("http://localhost:5000/send/sendemail", dataToSubmit);
     } else {
-      console.log(name);
-      console.log(company);
-      console.log(email);
-      console.log(phone);
-      console.log(date);
-      console.log(time);
+      let dataToSubmit = {
+        name,
+        company,
+        email,
+        phone,
+        date,
+        time,
+      };
+      setData(dataToSubmit);
     }
   };
 
@@ -117,8 +127,16 @@ export default function Modal({ isOpen, onRequestClose }) {
             </option>
           </select>
         </form>
+        <Errors data={data}></Errors>
         <button onClick={handleSubmit}>Rezervuoti</button>
-        <button onClick={onRequestClose}>Uždaryti</button>
+        <button
+          onClick={() => {
+            onRequestClose();
+            statet();
+          }}
+        >
+          Uždaryti
+        </button>
       </div>
     </div>
   );
