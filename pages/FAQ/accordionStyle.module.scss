@@ -208,3 +208,17 @@ table {
   float: left;
   width: 80%;
 }
+
+@media (max-width: 445px) {
+  .accordion__title {
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// @media (max-width: 413px) {
+//   .accordion__title {
+//     padding: 0;
+//   }
+// }
