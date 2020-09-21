@@ -217,19 +217,13 @@ html {
 
 @media (max-width: 600px) {
   .LeftSideNav {
-    // height: 10vh;
     .img {
-      margin: 1.125rem 0 1.125rem 2%;
+      margin: 1.125rem 0 1.125rem 5%;
     }
     div {
       display: none;
     }
-    img:not(first-child) {
-    }
-    p {
-    }
     .DrawerToggle {
-      // display: inline;
       margin-bottom: unset;
       margin: unset;
       float: right;
@@ -246,7 +240,6 @@ html {
         background-color: white;
         margin: 15%;
         margin-bottom: unset;
-        // float: right;
         margin-left: 0;
       }
     }
@@ -271,7 +264,6 @@ html {
     width: 40%;
     p:nth-child(1) {
       font-size: 3.375rem;
-      // font-size: 3.3rem;
       padding-top: 4%;
     }
     p:nth-child(2) {
@@ -298,9 +290,6 @@ html {
       text-shadow: 0 0.0625rem 0 #220038;
       outline: none;
     }
-    // Button:hover {
-    //   background-color: #8e3dc0;
-    // }
   }
 }
 
@@ -378,14 +367,6 @@ html {
   }
 }
 
-// @media (max-width: 600px) {
-//   .Left {
-//     div {
-//       padding-top: 30%;
-//     }
-//   }
-// }
-
 @media (max-width: 500px) {
   .Left {
     div {
@@ -394,10 +375,6 @@ html {
       }
       p:nth-child(2) {
         font-size: 300%;
-      }
-      p:nth-child(3) {
-      }
-      button {
       }
     }
   }
@@ -471,9 +448,7 @@ html {
       padding: 0.75rem 1.9375rem;
       text-shadow: 0 0.0625rem 0 #220038;
     }
-    // .RezervuotiButton:hover {
-    //   background: linear-gradient(to bottom, #310052 5%, #c972ff 100%);
-    // }
+
     .kontaktai {
       width: 85%;
       height: 5rem;
@@ -575,22 +550,7 @@ html {
       .Rezervuokite {
         padding: 4.6875rem 0 1rem 0;
       }
-      // .inputs {
-      //   select:first-child {
-      //   }
-      //   option:first-child {
-      //   }
-      //   div {
-      //     .VardasPavarde {
-      //     }
-      //     .Imone {
-      //     }
-      //   }
-      //   .pildymoLaukai {
-      //   }
-      //   .nuoma {
-      //   }
-      // }
+
       .RezervuotiButton {
         margin: 0.625rem auto 2rem;
       }
@@ -607,13 +567,6 @@ html {
         }
         div {
           float: unset;
-          // display: inline-block;
-          // div {
-          //   p:nth-child(1) {
-          //   }
-          //   p:nth-child(2) {
-          //   }
-          // }
         }
       }
     }

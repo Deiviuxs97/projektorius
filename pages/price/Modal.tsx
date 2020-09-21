@@ -69,11 +69,34 @@ export default function Modal({ isOpen, onRequestClose }) {
     }
   };
 
+  const _onHeaderClick = (event) => {
+    console.log(event.currentTarget);
+  };
+  const _onHeaderClickk = (event) => {
+    event.stopPropagation();
+    console.log("child");
+  };
+
   if (!isOpen) return null;
   return (
-    <div className={classes.overlay}>
-      <div className={classes.modal}>
-        <h2>Rezervuokite</h2>
+    <div
+      className={classes.overlay}
+      onClick={() => {
+        onRequestClose();
+        statet();
+      }}
+    >
+      <div className={classes.modal} onClick={_onHeaderClickk}>
+        <div
+          className={classes.close}
+          onClick={() => {
+            onRequestClose();
+            statet();
+          }}
+        >
+          X
+        </div>
+        <h2>Rezervacija</h2>
         <form id="contact" action="/" method="post" className={classes.inputs}>
           <input
             id="name"
@@ -129,14 +152,6 @@ export default function Modal({ isOpen, onRequestClose }) {
         </form>
         <Errors data={data}></Errors>
         <button onClick={handleSubmit}>Rezervuoti</button>
-        <button
-          onClick={() => {
-            onRequestClose();
-            statet();
-          }}
-        >
-          Uždaryti
-        </button>
       </div>
     </div>
   );

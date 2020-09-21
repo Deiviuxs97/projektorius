@@ -188,14 +188,14 @@ table {
 @media (max-width: 1100px) {
   .sectionFaq {
     margin-left: 0;
+    height: unset;
     .PirmasDivv {
       .duk {
-        padding: 7rem 0 5rem 0;
+        padding: 5rem 0 3rem 0;
         font-size: 4rem;
       }
       .divv {
         .img {
-          // display: none;
           width: 0;
           img {
             width: 0;
@@ -214,11 +214,11 @@ table {
 
 @media (max-width: 600px) {
   .sectionFaq {
-    height: 100vh;
+    height: unset;
     margin-left: 0;
     .PirmasDivv {
       .duk {
-        padding: 7rem 0 5rem 0;
+        padding: 5rem 0 3rem 0;
         // font-size: 3rem;
         text-align: center;
         font-weight: bold;

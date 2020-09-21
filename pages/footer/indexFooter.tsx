@@ -24,8 +24,8 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className={classes.apacia}>© 2020 projektorius</div>
       </div>
+      <div className={classes.apacia}>© 2020 projektorius</div>
     </footer>
   );
 }
