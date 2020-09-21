@@ -70,11 +70,7 @@ export default function Modal({ isOpen, onRequestClose }) {
   };
 
   const _onHeaderClick = (event) => {
-    console.log(event.currentTarget);
-  };
-  const _onHeaderClickk = (event) => {
     event.stopPropagation();
-    console.log("child");
   };
 
   if (!isOpen) return null;
@@ -86,7 +82,7 @@ export default function Modal({ isOpen, onRequestClose }) {
         statet();
       }}
     >
-      <div className={classes.modal} onClick={_onHeaderClickk}>
+      <div className={classes.modal} onClick={_onHeaderClick}>
         <div
           className={classes.close}
           onClick={() => {

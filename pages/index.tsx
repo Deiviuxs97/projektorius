@@ -8,6 +8,7 @@ import Switch from "./switch/Switch";
 import axios from "axios";
 import Errors from "./err/errors";
 import Head from "next/head";
+import SideDrawer from "./sideDrawer/sideDrawer";
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
@@ -16,6 +17,13 @@ export default function Home() {
   const myDes = useRef(null);
   const myPri = useRef(null);
   const myFaq = useRef(null);
+
+  const myRefs = {
+    pro: myPro,
+    des: myDes,
+    pri: myPri,
+    faq: myFaq,
+  };
 
   //---------------------------------------------- States
   const [switchedFirst, setSwitchedFirst] = useState(true);
@@ -34,6 +42,14 @@ export default function Home() {
   // Errors States
   const [data, setData] = useState(null);
 
+  //---------------------------------------------- Burger
+
+  const [burgerState, setBurger] = useState(false);
+
+  const burger = () => {
+    setBurger(true);
+  };
+
   //---------------------------------------------- Nav click part
   const executeScrollPro = () => {
     scrollToRef(myPro);
@@ -41,7 +57,6 @@ export default function Home() {
     setSwitchedS(false);
     setSwitchedT(false);
     setSwitchedF(false);
-    // console.log("Click one");
   };
   const executeScrollDes = () => {
     scrollToRef(myDes);
@@ -49,7 +64,6 @@ export default function Home() {
     setSwitchedS(true);
     setSwitchedT(false);
     setSwitchedF(false);
-    // console.log("Click two");
   };
   const executeScrollPri = () => {
     scrollToRef(myPri);
@@ -218,6 +232,11 @@ export default function Home() {
           content="Tinklapis skirtas Džong Juan Čigongo mokyklos renginių bei informacijos viešinimui."
         /> */}
       </Head>
+      <SideDrawer
+        isOpen={burgerState}
+        onRequestClose={() => setBurger(false)}
+        myRefs={myRefs}
+      />
       <nav
         itemScope
         itemType="https://schema.org/SiteNavigationElement
@@ -247,7 +266,7 @@ export default function Home() {
           <Switch onClick={executeScrollFaq} switchState={switchedF} />
           <p onClick={executeScrollFaq}>DUK</p>
         </div>
-        <div className={classes.DrawerToggle}>
+        <div className={classes.DrawerToggle} onClick={burger}>
           <div></div>
           <div></div>
           <div></div>
