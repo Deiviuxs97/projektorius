@@ -2,7 +2,13 @@ import classes from "./styleDescription.module.scss";
 
 export default function Description(props) {
   return (
-    <section className={classes.sectionDescription} ref={props.refProp}>
+    <section
+      className={classes.sectionDescription}
+      ref={props.refProp}
+      id="aprasymas"
+      itemScope
+      itemType="https://schema.org/description"
+    >
       <div className={classes.FirstDiv}>
         <div>
           <p className={classes.bigText}>APIE PROJEKTORIŲ</p>
@@ -10,7 +16,11 @@ export default function Description(props) {
         </div>
       </div>
       <div className={classes.SecondDiv}>
-        <div className={classes.aprasymas}>
+        <div
+          className={classes.aprasymas}
+          itemScope
+          itemType="https://schema.org/description"
+        >
           <p>
             Projektorius Jums padės dideliame ekrane pateikti jūsų prezentaciją,
             parodyti filmuotą medžiagą, nuotraukas ar pažiūrėti mėgstamą filmą.

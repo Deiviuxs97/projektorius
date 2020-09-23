@@ -5,7 +5,7 @@ import Modal from "./Modal";
 export default function Price(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
-    <section className={classes.sectionPrice} ref={props.refProp}>
+    <section className={classes.sectionPrice} ref={props.refProp} id="kaina">
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
@@ -20,7 +20,11 @@ export default function Price(props) {
             <div className={classes.img}>
               <img src="/log.png" alt="log" />
             </div>
-            <div className={classes.raiska}>
+            <div
+              className={classes.raiska}
+              itemScope
+              itemType="https://schema.org/ProductModel"
+            >
               <p>Raiška -</p>
               <p>Kontrastas -</p>
               <p>Ryškumas -</p>
@@ -30,7 +34,9 @@ export default function Price(props) {
             </div>
           </div>
           <div className={classes.tableBot}>
-            <p>(Kaina)</p>
+            <p itemScope itemType="https://schema.org/price">
+              (Kaina)
+            </p>
             <button
               className={classes.rezervacija}
               onClick={() => setModalIsOpen(true)}

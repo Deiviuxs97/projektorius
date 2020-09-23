@@ -25,8 +25,13 @@ function Accordion(props) {
     );
     setIconState(setActive === active ? true : false);
   }
+
   return (
-    <div className={classes.accordion__section}>
+    <div
+      className={classes.accordion__section}
+      itemScope
+      itemType="https://schema.org/Question"
+    >
       <button className={`${accordion} ${setActive}`} onClick={toggleAccordion}>
         <p className={classes.accordion__title}>{props.title}</p>
         <Chevron
@@ -40,10 +45,14 @@ function Accordion(props) {
         ref={content}
         style={{ maxHeight: `${setHeight}` }}
         className={classes.accordion__content}
+        itemScope
+        itemType="https://schema.org/title"
       >
         <div
           className={classes.accordion__text}
           dangerouslySetInnerHTML={{ __html: props.content }}
+          itemScope
+          itemType="https://schema.org/Text"
         />
         <div className={classes.accordion__border}></div>
       </div>

@@ -1,11 +1,15 @@
 import classes from "./faqStyle.module.scss";
-import React, { constructor, useState } from "react";
-import Collapsible from "react-collapsible";
+import React from "react";
 import Accordion from "./Accordion";
 
 export default function Faq(props) {
   return (
-    <section className={classes.sectionFaq} ref={props.refProp}>
+    <section
+      className={classes.sectionFaq}
+      ref={props.refProp}
+      itemScope
+      itemType="https://schema.org/FAQPage"
+    >
       <div className={classes.PirmasDivv}>
         <p className={classes.duk}>DUK</p>
         <div className={classes.divv}>

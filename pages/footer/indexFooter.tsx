@@ -2,7 +2,11 @@ import classes from "./footerStyle.module.scss";
 
 export default function Footer() {
   return (
-    <footer className={classes.footer}>
+    <footer
+      className={classes.footer}
+      itemScope
+      itemType="https://schema.org/WPFooter"
+    >
       <div className={classes.virsus}>
         <div className={classes.kaire}>
           <p>Projektoriaus nuoma</p>
@@ -17,10 +21,22 @@ export default function Footer() {
           <hr></hr>
           <ul>
             <li>
-              <a href="tel:+370 6666666">+370 666 6666</a>
+              <a
+                href="tel:+370 6666666"
+                itemScope
+                itemType="https://schema.org/telephone"
+              >
+                +370 666 6666
+              </a>
             </li>
             <li>
-              <a href="mailto:test@test.com">Rezervacija paštu</a>
+              <a
+                href="mailto:test@test.com"
+                itemScope
+                itemType="https://schema.org/email"
+              >
+                Rezervacija paštu
+              </a>
             </li>
           </ul>
         </div>

@@ -37,6 +37,7 @@ export default function SideDrawer({ isOpen, onRequestClose, myRefs }) {
         >
           Projektorius
         </p>
+        <hr />
         <p
           onClick={function () {
             executeScrollDes();
@@ -61,13 +62,13 @@ export default function SideDrawer({ isOpen, onRequestClose, myRefs }) {
         >
           DUK
         </p>
-        {/* <p
+        <p
           onClick={() => {
             onRequestClose();
           }}
         >
           Atgal
-        </p> */}
+        </p>
       </nav>
     </div>
   );

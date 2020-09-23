@@ -18,6 +18,7 @@ export default function Modal({ isOpen, onRequestClose }) {
   const statet = () => {
     setData(null);
   };
+
   //---------------------------------------------- Form handle
 
   const handleChange = (e) => {
@@ -93,13 +94,22 @@ export default function Modal({ isOpen, onRequestClose }) {
           X
         </div>
         <h2>Rezervacija</h2>
-        <form id="contact" action="/" method="post" className={classes.inputs}>
+        <form
+          id="contact"
+          action="/"
+          method="post"
+          className={classes.inputs}
+          itemScope
+          itemType="https://schema.org/Reservation"
+        >
           <input
             id="name"
             type="text"
             placeholder="Vardas, Pavardė"
             className={classes.VardasPavarde}
             onChange={handleChange}
+            itemScope
+            itemType="http://schema.org/givenName"
           />
           <input
             id="company"
@@ -107,6 +117,8 @@ export default function Modal({ isOpen, onRequestClose }) {
             placeholder="Įmonė (jeigu užsako įmonė)"
             className={classes.Imone}
             onChange={handleChange}
+            itemScope
+            itemType="https://schema.org/LocalBusiness"
           />
           <input
             id="email"
@@ -114,6 +126,8 @@ export default function Modal({ isOpen, onRequestClose }) {
             placeholder="Elektroninis paštas"
             className={classes.pildymoLaukasEl}
             onChange={handleChange}
+            itemScope
+            itemType="https://schema.org/email"
           />
           <input
             id="phone"
@@ -121,13 +135,18 @@ export default function Modal({ isOpen, onRequestClose }) {
             placeholder="Telefonas"
             className={classes.pildymoLaukai}
             onChange={handleChange}
+            itemScope
+            itemType="https://schema.org/telephone"
           />
           <input
             id="date"
-            type="text"
-            placeholder="Norima data nuomai (Rugsejis 17, 2020)"
+            type="date"
             className={classes.pildymoLaukasData}
             onChange={handleChange}
+            min="2020-09-01"
+            max="2021-12-31"
+            itemScope
+            itemType="https://schema.org/Date"
           />
           <select
             id="time"
@@ -135,6 +154,8 @@ export default function Modal({ isOpen, onRequestClose }) {
             className={classes.nuoma}
             defaultValue={"DEFAULT"}
             onChange={handleChange}
+            itemScope
+            itemType="https://schema.org/Reservation"
           >
             <option value="DEFAULT" disabled>
               Nuomos periodas
@@ -147,7 +168,13 @@ export default function Modal({ isOpen, onRequestClose }) {
           </select>
         </form>
         <Errors data={data}></Errors>
-        <button onClick={handleSubmit}>Rezervuoti</button>
+        <button
+          onClick={handleSubmit}
+          itemScope
+          itemType="https://schema.org/ReserveAction"
+        >
+          Rezervuoti
+        </button>
       </div>
     </div>
   );
