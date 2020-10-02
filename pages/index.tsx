@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import classes from "./style.module.scss";
 
-export default function Home() {
+function Home() {
   const language = useSelector((state) => state.language);
   const lngValue = language?.lngValue;
 
@@ -13,5 +14,6 @@ export default function Home() {
     }
   }, []);
 
-  return <div>Loading</div>;
+  return <div className={classes.loader}></div>;
 }
+export default Home;

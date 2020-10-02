@@ -2,8 +2,24 @@ import React, { useState } from "react";
 import classes from "./priceStyle.module.scss";
 import axios from "axios";
 import Errors from "../err/errors";
+import { useSelector } from "react-redux";
 
 export default function Modal({ isOpen, onRequestClose }) {
+  const language = useSelector((state) => state.language);
+  let langValue = language?.lngValue;
+  //---------------------------------------------- Language WORDS
+  // Nav
+  const headingTitle = language[langValue]?.modal?.headingTitle;
+  const nameAndSecondName = language?.[langValue]?.modal?.nameAndSecondName;
+  const comp = language?.[langValue]?.modal?.comp;
+  const el = language?.[langValue]?.modal?.el;
+  const telephone = language?.[langValue]?.modal?.telephone;
+  const rentTime = language?.[langValue]?.modal?.rentTime;
+  const oneDay = language?.[langValue]?.modal?.oneDay;
+  const twoDays = language?.[langValue]?.modal?.twoDays;
+  const more = language?.[langValue]?.modal?.more;
+  const res = language?.[langValue]?.modal?.res;
+
   // Form States
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -93,7 +109,7 @@ export default function Modal({ isOpen, onRequestClose }) {
         >
           X
         </div>
-        <h2>Rezervacija</h2>
+        <h2>{headingTitle}</h2>
         <form
           id="contact"
           action="/"
@@ -105,7 +121,7 @@ export default function Modal({ isOpen, onRequestClose }) {
           <input
             id="name"
             type="text"
-            placeholder="Vardas, Pavardė"
+            placeholder={nameAndSecondName}
             className={classes.VardasPavarde}
             onChange={handleChange}
             itemScope
@@ -114,7 +130,7 @@ export default function Modal({ isOpen, onRequestClose }) {
           <input
             id="company"
             type="text"
-            placeholder="Įmonė (jeigu užsako įmonė)"
+            placeholder={comp}
             className={classes.Imone}
             onChange={handleChange}
             itemScope
@@ -123,7 +139,7 @@ export default function Modal({ isOpen, onRequestClose }) {
           <input
             id="email"
             type="email"
-            placeholder="Elektroninis paštas"
+            placeholder={el}
             className={classes.pildymoLaukasEl}
             onChange={handleChange}
             itemScope
@@ -132,7 +148,7 @@ export default function Modal({ isOpen, onRequestClose }) {
           <input
             id="phone"
             type="tel"
-            placeholder="Telefonas"
+            placeholder={telephone}
             className={classes.pildymoLaukai}
             onChange={handleChange}
             itemScope
@@ -158,13 +174,11 @@ export default function Modal({ isOpen, onRequestClose }) {
             itemType="https://schema.org/Reservation"
           >
             <option value="DEFAULT" disabled>
-              Nuomos periodas
+              {rentTime}
             </option>
-            <option value="vienai parai">1 para</option>
-            <option value="dviejoms paroms">2 paros</option>
-            <option value="daugiau nei dviejoms paroms">
-              Daugiau nei 2 paros
-            </option>
+            <option value="vienai parai">{oneDay}</option>
+            <option value="dviejoms paroms">{twoDays}</option>
+            <option value="daugiau nei dviejoms paroms">{more}</option>
           </select>
         </form>
         <Errors data={data}></Errors>
@@ -173,7 +187,7 @@ export default function Modal({ isOpen, onRequestClose }) {
           itemScope
           itemType="https://schema.org/ReserveAction"
         >
-          Rezervuoti
+          {res}
         </button>
       </div>
     </div>

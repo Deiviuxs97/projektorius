@@ -1,6 +1,18 @@
 import classes from "./styleDescription.module.scss";
+import { useSelector } from "react-redux";
 
 export default function Description(props) {
+  const language = useSelector((state) => state.language);
+  let langValue = language?.lngValue;
+  //---------------------------------------------- Language WORDS
+  // Nav
+  const pro = language?.[langValue]?.des?.pro;
+  const proDes = language?.[langValue]?.des?.proDes;
+  const proDesTextOne = language?.[langValue]?.des?.proDesTextOne;
+  const proDesTextTwo = language?.[langValue]?.des?.proDesTextTwo;
+  const proDesTextThree = language?.[langValue]?.des?.proDesTextThree;
+  const proDesTextFour = language?.[langValue]?.des?.proDesTextFour;
+
   return (
     <section
       className={classes.sectionDescription}
@@ -11,8 +23,8 @@ export default function Description(props) {
     >
       <div className={classes.FirstDiv}>
         <div>
-          <p className={classes.bigText}>APIE PROJEKTORIŲ</p>
-          <p className={classes.onBigText}>Projektoriaus aprašymas</p>
+          <p className={classes.bigText}>{pro}</p>
+          <p className={classes.onBigText}>{proDes}</p>
         </div>
       </div>
       <div className={classes.SecondDiv}>
@@ -22,21 +34,11 @@ export default function Description(props) {
           itemType="https://schema.org/description"
         >
           <p>
-            Projektorius Jums padės dideliame ekrane pateikti jūsų prezentaciją,
-            parodyti filmuotą medžiagą, nuotraukas ar pažiūrėti mėgstamą filmą.
-            Dažnai po įvykusios šventės (jubiliejaus, vestuvių, krikštynų)
-            svečiai nekantrauja pamatyti nuotraukas ir video įrašą. Bet norisi
-            dar šventės metu peržiūrėti nuotraukas ar filmuotą medžiagą. Siūlome
-            išsinomuoti kokybišką projektorių, pačiomis geriausiomis sąlygomis
-            bei kainomis.<br></br>
-            <br></br> Projektoriaus galimybės: parodyti savo klientams,
-            partneriams, draugams, svečiams, kolegoms – prezentaciją,
-            nuotraukas, filmuotą medžiagą. <br></br>Projektorius gali būti
-            naudojamas: įmonėje, įmonės šventėje, pristatant produktą,
-            gimtadienyje , vestuvėse, jubiliejuose, krikštynose.<br></br> Už
-            papildomą mokestį galime pasiūlyti šiuos priedus: kompiuteris,
-            prezentacijų pultelis, papildomus laidus, garso apratūrą,
-            mikrofonus, aptarnaujantį personalą.
+            {proDesTextOne}
+            <br></br>
+            <br></br> {proDesTextTwo} <br></br>
+            {proDesTextThree}
+            <br></br> {proDesTextFour}
           </p>
         </div>
         <div className={classes.foto}>

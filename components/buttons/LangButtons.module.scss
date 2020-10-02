@@ -1,0 +1,22 @@
+.buttonLT {
+  background-image: url("/flag-lt.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: unset;
+  margin: 0.3rem;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  width: 2rem;
+  cursor: pointer;
+}
+.buttonEN {
+  background-image: url("/flag-eng.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: unset;
+  margin: 0.3rem;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  width: 2rem;
+  cursor: pointer;
+}

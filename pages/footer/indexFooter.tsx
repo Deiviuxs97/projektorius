@@ -1,6 +1,16 @@
 import classes from "./footerStyle.module.scss";
+import { useSelector } from "react-redux";
 
 export default function Footer() {
+  const language = useSelector((state) => state.language);
+  let langValue = language?.lngValue;
+  //---------------------------------------------- Language WORDS
+  // Nav
+  const pro = language?.[langValue]?.footer?.pro;
+  const proTwo = language?.[langValue]?.footer?.proTwo;
+  const kon = language?.[langValue]?.footer?.kon;
+  const res = language?.[langValue]?.footer?.res;
+
   return (
     <footer
       className={classes.footer}
@@ -9,15 +19,16 @@ export default function Footer() {
     >
       <div className={classes.virsus}>
         <div className={classes.kaire}>
-          <p>Projektoriaus nuoma</p>
+          <p>{pro}</p>
           <hr></hr>
-          <p>
-            Projektoriaus nuoma Projektoriaus nuoma Projektoriaus nuoma
-            Projektoriaus nuoma
-          </p>
+          <p>{proTwo}</p>
         </div>
-        <div className={classes.desine}>
-          <p>Kontaktai</p>
+        <div
+          className={classes.desine}
+          itemScope
+          itemType="https://schema.org/contactType"
+        >
+          <p>{kon}</p>
           <hr></hr>
           <ul>
             <li>
@@ -35,7 +46,7 @@ export default function Footer() {
                 itemScope
                 itemType="https://schema.org/email"
               >
-                Rezervacija paštu
+                {res}
               </a>
             </li>
           </ul>
